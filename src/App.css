@@ -29,11 +29,13 @@ thead th, tfoot th {
   font-family: 'Rock Salt';
 }
 
+/* table headings */
 th {
   letter-spacing: 2px;
   padding: 10px;
 }
 
+/* table data */
 td {
   letter-spacing: 1px;
   overflow-x:hidden;
@@ -41,26 +43,37 @@ td {
   font-size: 12px;
   padding: 10px;
   text-align: center;
+  width: 100px;
+}
+.content_td p {
+  max-width: 100%;
+  max-height: 100px;
+  overflow-y: auto;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+.center-content {
+  text-align: center;
+}
+/* style to display scrollbar for long text */
+.center-content p {
+  text-align: center;
+  white-space: pre-line;
+  overflow-y: auto;
+  max-height: 100px;
 }
 
 /* table */
-
 table {
   table-layout: fixed;
   width: 100%;
   border-collapse: collapse;
   overflow:hidden;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
-.content_td p {
-  max-width: 100%;
-  max-height: 100px;
-  overflow-y: auto;
-  text-overflow: ellipsis;
-}
-
-
+/* images */
 img {
   object-fit: scale-down;
   width: 100%;
@@ -83,6 +96,7 @@ th:nth-child(4),
 td:nth-child(5),
 th:nth-child(5) {
   width: 30%;
+  text-align: center;
 }
 
 /* Zebra striping for rows in tbody */
@@ -90,16 +104,17 @@ tbody tr:nth-child(odd) {
   background-color: aquamarine;
 }
 
-/* style to display scrollbar for long text */
-.content_td p {
-  overflow-y: auto;
-  white-space: normal;
-  max-width: 100px;
-  max-height: 100px;
-  text-overflow: ellipsis;
+.recipe-create-form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
-.recipe-create-form {
-  display:flex;
-  
+.recipe-create-form table {
+  width: 100%;
+}
+
+.recipe-create-form th, 
+.recipe-create-form td {
+  width: 50%
 }
