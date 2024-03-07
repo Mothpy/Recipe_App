@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 function RecipeCreate({ addRecipe }) {
+  // state to hold form data 
   const [formData, setFormData] = useState({
     name: "",
     cuisine: "",
@@ -9,6 +10,7 @@ function RecipeCreate({ addRecipe }) {
     preparation: ""
   });
 
+  // handler func to update form data on input change 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -22,6 +24,7 @@ function RecipeCreate({ addRecipe }) {
       return;
     }
     addRecipe(formData);
+    // clear form data after submission 
     setFormData({
       name: "",
       cuisine: "",
@@ -32,6 +35,7 @@ function RecipeCreate({ addRecipe }) {
   };
 
   return (
+    // form to create a new recipe 
     <form onSubmit={handleSubmit} name="create" className="recipe-create-form">
       <table>
         <tbody>
